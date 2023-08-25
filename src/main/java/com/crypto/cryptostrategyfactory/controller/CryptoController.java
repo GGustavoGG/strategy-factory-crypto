@@ -21,13 +21,13 @@ public class CryptoController {
 
     @PostMapping("/encrypt")
     public ResponseEntity<DataCryptDTO> cryptData(@RequestBody DataCryptDTO dataCryptDTO){
-        log.info(dataCryptDTO.getData(), dataCryptDTO.getCryptoTypeEnum().name());
+        log.info("Realizando o encrypt do dado {} com a criptografia {}", dataCryptDTO.getData(), dataCryptDTO.getCryptoTypeEnum());
         return ResponseEntity.status(HttpStatus.OK).body(cryptoService.crypt(dataCryptDTO));
     }
 
     @PostMapping("/decrypt")
     public ResponseEntity<DataCryptDTO> decryptData(@RequestBody DataCryptDTO dataCryptDTO){
-        log.info(dataCryptDTO.getData(), dataCryptDTO.getCryptoTypeEnum().name());
+        log.info("Realizando o decrypt do dado {} com a criptografia {}", dataCryptDTO.getData(), dataCryptDTO.getCryptoTypeEnum());
         return ResponseEntity.status(HttpStatus.OK).body(cryptoService.decrypt(dataCryptDTO));
     }
 }

@@ -4,5 +4,7 @@ import java.io.Serializable;
 
 public enum CryptoTypeEnum implements Serializable {
 
-    DEFAULT
+    DEFAULT,
+
+    CAESAR_CIPHER_CRYPTO
 }
